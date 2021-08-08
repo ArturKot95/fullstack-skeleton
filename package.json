@@ -8,7 +8,7 @@
     "start:dev": "nodemon --exec npm run build:dev",
     "build": "webpack --config ./config/webpack.config.js",
     "build:dev": "webpack --config ./config/webpack.config.js && node ./src/server/app.js",
-    "test": "jest --forceExit"
+    "test": "jest --watchAll"
   },
   "keywords": [
     "react",
@@ -23,6 +23,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "express": "^4.16.4",
+    "mongodb": "^4.1.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
