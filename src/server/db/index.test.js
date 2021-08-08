@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const { connection } = require('./');
 
 describe('MongoDB & Mongoose connection', () => {
@@ -16,6 +15,7 @@ describe('MongoDB & Mongoose connection', () => {
   });
 
   it('Connected to test database', () => {
+    expect(process.env.MONGO_URL).toBeDefined();
     expect(connected).toBe(true);
   });
 });
