@@ -2,11 +2,11 @@
 const http = require('http');
 const chalk = require('chalk');
 const app = require('./app');
-const { connect } = require('./db');
+const { db } = require('./db');
 
-connect()
-.then(client => {
-    app.locals.db = client.db('flashcards');
+db.on('error', err => console.error(err));
+db.once('open', () => {
+    app.locals.db = db;
 
     const httpServer = http.createServer(app);
     const port = process.env.PORT || 3000;
