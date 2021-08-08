@@ -38,7 +38,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: '<%= name %>',
+      title: 'Flashcards',
       favicon: '../server/template/favicon.ico',
       template: '../server/template/index.html'
     })
