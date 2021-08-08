@@ -1,18 +1,10 @@
 'use strict';
-
+const http = require('http');
+const chalk = require('chalk');
 const express = require('express');
+const app = require('./app');
 
-const router = new express.Router();
-
-// routes
-router.use('/example', require('./routes/examples'));
-
-router.use((req, res) => {
-    res.status(404).end();
+const httpServer = http.createServer(app);
+httpServer.listen(process.env.PORT || 3000, () => {
+    console.log(chalk.cyan('Server is listening'), chalk.yellow('http://localhost:3000'));
 });
-
-router.use((err, req, res, next) => {
-    console.log(err)
-});
-
-module.exports = router;
