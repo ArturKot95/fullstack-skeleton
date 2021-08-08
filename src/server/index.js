@@ -1,10 +1,16 @@
 'use strict';
 const http = require('http');
 const chalk = require('chalk');
-const express = require('express');
 const app = require('./app');
+const { connect } = require('./db');
 
-const httpServer = http.createServer(app);
-httpServer.listen(process.env.PORT || 3000, () => {
-    console.log(chalk.cyan('Server is listening'), chalk.yellow('http://localhost:3000'));
+connect()
+.then(client => {
+    app.locals.db = client.db('flashcards');
+
+    const httpServer = http.createServer(app);
+    const port = process.env.PORT || 3000;
+    httpServer.listen(port, () => {
+        console.log(chalk.cyan('Server is listening'), chalk.yellow(`http://localhost:${port}`));
+    });
 });

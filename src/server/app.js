@@ -1,11 +1,11 @@
 'use strict';
 
 const express = require('express');
-
-const app = express();
 const { resolve } = require('path');
 const morgan = require('morgan');
 const apiRouter = require('./routes');
+
+const app = express();
 
 // logging middleware
 app.use(morgan('dev'));
