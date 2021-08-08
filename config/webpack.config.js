@@ -16,6 +16,10 @@ module.exports = {
     filename: 'bundle.js'
   },
   devtool: 'source-map',
+  devServer: {
+    hot: true,
+    liveReload: true
+  },
   module: {
     rules: [
       {

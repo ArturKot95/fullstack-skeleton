@@ -7,8 +7,9 @@
     "start": "node ./src/server",
     "start:dev": "nodemon --exec npm run build:dev",
     "build": "webpack --config ./config/webpack.config.js",
-    "build:dev": "webpack --config ./config/webpack.config.js && node ./src/server",
-    "test": "jest --watchAll"
+    "build:dev": "nodemon ./src/server",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "keywords": [
     "react",
@@ -60,7 +61,8 @@
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.19.0",
-    "webpack-cli": "^4.4.0"
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-middleware": "^5.0.0"
   },
   "jest": {
     "collectCoverage": true,
