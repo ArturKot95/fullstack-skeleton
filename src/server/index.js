@@ -2,11 +2,11 @@
 const http = require('http');
 const chalk = require('chalk');
 const app = require('./app');
-const { db } = require('./db');
+const { connection } = require('./db');
 
-db.on('error', err => console.error(err));
-db.once('open', () => {
-    app.locals.db = db;
+connection.on('error', err => console.error(err));
+connection.once('open', () => {
+    app.locals.db = connection;
 
     const httpServer = http.createServer(app);
     const port = process.env.PORT || 3000;
