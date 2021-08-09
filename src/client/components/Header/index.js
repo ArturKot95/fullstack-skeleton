@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export const Header = () => {
     return (
@@ -14,6 +15,7 @@ export const Header = () => {
                         <Nav.Link href="/other">Other</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
+                {/* <Button><i class="bi bi-file-plus-fill"></i>Collection</Button> */}
             </Container>
         </Navbar>
     );

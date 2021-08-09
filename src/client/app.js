@@ -8,6 +8,7 @@ import store from './store.js';
 import Routes from './routes.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 ReactDOM.render(
     <Provider store={store}>
