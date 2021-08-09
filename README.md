@@ -3,10 +3,10 @@
 The following npm scripts are available:
 
 ```
-"start": "node ./src/server/app.js",
+"start": "node ./src/server",
 "start:dev": "nodemon --ignore 'www/' --exec npm run build:dev",
 "build": "webpack --config ./config/webpack.config.js",
-"build:dev": "webpack --config ./config/webpack.config.js && node ./src/server/app.js",
+"build:dev": "webpack --config ./config/webpack.config.js && node ./src/server",
 "test": "jest --forceExit"
 ```
 
